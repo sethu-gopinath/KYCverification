@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insurance Consent Management System</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Insurance Consent Management System</h1>
+        <p>Create Insurance Applications & Generate Customer Consent Links</p>
+    </div>
+
+    <form id="applicationForm">
+
+        <!-- CUSTOMER DETAILS -->
+
+        <div class="card">
+
+            <div class="section-title">
+                Customer Details
+            </div>
+
+            <div class="grid">
+
+                <div class="field">
+                    <label>Full Name *</label>
+                    <input type="text" id="fullName" required>
+                </div>
+
+                <div class="field">
+                    <label>Father / Spouse Name *</label>
+                    <input type="text" id="fatherName" required>
+                </div>
+
+                <div class="field">
+                    <label>Date of Birth *</label>
+                    <input type="date" id="dob" required>
+                </div>
+
+                <div class="field">
+                    <label>Age *</label>
+                    <input type="number" id="age" required>
+                </div>
+
+                <div class="field">
+                    <label>Gender *</label>
+                    <select id="gender">
+                        <option value="">Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Mobile Number *</label>
+                    <input type="text" id="phone" required>
+                </div>
+
+                <div class="field">
+                    <label>Alternate Mobile</label>
+                    <input type="text" id="altPhone">
+                </div>
+
+                <div class="field">
+                    <label>Email *</label>
+                    <input type="email" id="email" required>
+                </div>
+
+                <div class="field">
+                    <label>Aadhaar Number</label>
+                    <input type="text" id="aadhaar">
+                </div>
+
+                <div class="field">
+                    <label>PAN Number</label>
+                    <input type="text" id="pan">
+                </div>
+
+                <div class="field">
+                    <label>Occupation</label>
+                    <input type="text" id="occupation">
+                </div>
+
+                <div class="field">
+                    <label>Annual Income</label>
+                    <input type="text" id="annualIncome">
+                </div>
+
+                <div class="field">
+                    <label>City</label>
+                    <input type="text" id="city">
+                </div>
+
+                <div class="field">
+                    <label>State</label>
+                    <input type="text" id="state">
+                </div>
+
+                <div class="field">
+                    <label>Pincode</label>
+                    <input type="text" id="pincode">
+                </div>
+
+            </div>
+
+            <div class="field full-width">
+                <label>Address *</label>
+                <textarea id="address" rows="4"></textarea>
+            </div>
+
+            <div class="photo-section">
+
+                <label>Customer Photo *</label>
+
+                <input
+                    type="file"
+                    id="photo"
+                    accept="image/*"
+                >
+
+                <img
+                    id="preview"
+                    class="preview"
+                    src=""
+                    alt=""
+                >
+
+            </div>
+
+        </div>
+
+        <!-- POLICY DETAILS -->
+
+        <div class="card">
+
+            <div class="section-title">
+                Policy Details
+            </div>
+
+            <div class="grid">
+
+                <div class="field">
+                    <label>Insurance Company *</label>
+                    <select id="insuranceCompany">
+                        <option value="">Select Company</option>
+                        <option>LIC</option>
+                        <option>HDFC Life</option>
+                        <option>ICICI Prudential</option>
+                        <option>SBI Life</option>
+                        <option>Max Life</option>
+                        <option>Tata AIA</option>
+                        <option>Bajaj Allianz</option>
+                        <option>Star Health</option>
+                        <option>Care Health</option>
+                        <option>Niva Bupa</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Insurance Type *</label>
+                    <select id="insuranceType">
+                        <option value="">Select Type</option>
+                        <option>Life Insurance</option>
+                        <option>Health Insurance</option>
+                        <option>Term Insurance</option>
+                        <option>Motor Insurance</option>
+                        <option>ULIP</option>
+                        <option>Child Plan</option>
+                        <option>Pension Plan</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Product Name *</label>
+                    <input type="text" id="productName">
+                </div>
+
+                <div class="field">
+                    <label>Payment Frequency *</label>
+                    <select id="paymentMode">
+                        <option>Monthly</option>
+                        <option>Quarterly</option>
+                        <option>Half-Yearly</option>
+                        <option>Yearly</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Policy Term *</label>
+                    <select id="policyTerm">
+                        <option>5 Years</option>
+                        <option>10 Years</option>
+                        <option>15 Years</option>
+                        <option>20 Years</option>
+                        <option>25 Years</option>
+                        <option>30 Years</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Premium Amount *</label>
+                    <input type="number" id="premiumAmount">
+                </div>
+
+                <div class="field">
+                    <label>Sum Assured *</label>
+                    <input type="number" id="sumAssured">
+                </div>
+
+                <div class="field">
+                    <label>Agent Name</label>
+                    <input type="text" id="agentName">
+                </div>
+
+                <div class="field">
+                    <label>Branch Name</label>
+                    <input type="text" id="branchName">
+                </div>
+
+                <div class="field">
+                    <label>Nominee Name</label>
+                    <input type="text" id="nomineeName">
+                </div>
+
+                <div class="field">
+                    <label>Nominee Relationship</label>
+                    <input type="text" id="nomineeRelation">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- SUBMIT -->
+
+        <button
+            type="submit"
+            id="submitBtn"
+            class="submit-btn"
+        >
+            Create Application
+        </button>
+
+    </form>
+
+</div>
+
+<!-- SUCCESS MODAL -->
+
+<div id="successModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>Application Created Successfully</h2>
+
+        <div class="result-box">
+
+            <p>
+                <strong>Application Number</strong>
+            </p>
+
+            <h3 id="appNumber"></h3>
+
+            <p>
+                <strong>Consent Link</strong>
+            </p>
+
+            <input
+                type="text"
+                id="generatedLink"
+                readonly
+            >
+
+            <div class="btn-group">
+
+                <button id="copyBtn">
+                    Copy Link
+                </button>
+
+                <button id="openBtn">
+                    Open Consent Portal
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="module" src="admin.js"></script>
+
+</body>
+</html>

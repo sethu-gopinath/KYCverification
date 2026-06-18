@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Insurance Customer Consent</title>
+
+<link rel="stylesheet" href="consent.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <div class="card">
+
+        <!-- Progress -->
+
+        <div class="progress-wrapper">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- PAGE 1 -->
+
+        <section id="page1" class="page active">
+
+            <h2>Select Your Language</h2>
+
+            <p class="subtitle">
+                Please choose your preferred language.
+            </p>
+
+            <div class="language-grid">
+
+                <button onclick="selectLanguage('English')">English</button>
+                <button onclick="selectLanguage('Hindi')">Hindi</button>
+                <button onclick="selectLanguage('Tamil')">Tamil</button>
+                <button onclick="selectLanguage('Telugu')">Telugu</button>
+                <button onclick="selectLanguage('Kannada')">Kannada</button>
+                <button onclick="selectLanguage('Malayalam')">Malayalam</button>
+
+            </div>
+
+        </section>
+
+        <!-- PAGE 2 -->
+
+        <!-- PAGE 2 -->
+
+<section id="page2" class="page">
+
+    <h2>Identity Verification</h2>
+
+    <p class="subtitle">
+        Camera and location permissions are required to continue.
+    </p>
+
+    <div class="permission-container">
+
+        <div class="permission-card">
+            <div class="permission-icon">📷</div>
+
+            <h3>Camera Access</h3>
+
+            <p>
+                Required for customer identity verification.
+            </p>
+
+            <div id="cameraStatus" class="status waiting">
+                Waiting for permission
+            </div>
+        </div>
+
+        <div class="permission-card">
+
+            <div class="permission-icon">📍</div>
+
+            <h3>Location Access</h3>
+
+            <p>
+                Required for consent geo-verification.
+            </p>
+
+            <div id="locationStatus" class="status waiting">
+                Waiting for permission
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="camera-wrapper">
+
+        <video
+            id="cameraPreview"
+            autoplay
+            muted
+            playsinline
+            class="camera">
+        </video>
+
+    </div>
+
+    <button
+        class="primary-btn"
+        onclick="requestPermissions()">
+
+        Allow Camera & Location
+
+    </button>
+
+</section>
+
+        
+
+        <!-- PAGE 4 -->
+
+        <!-- PAGE 4 -->
+
+<section id="page4" class="page">
+
+    <h2>Customer Face Verification</h2>
+
+    <p class="subtitle">
+        Position your face inside the oval guide and verify.
+    </p>
+
+    <div class="face-section">
+
+        <div class="reference-photo-box">
+
+            <h3>Customer Photo</h3>
+
+            <img
+                id="customerPhoto"
+                class="customer-photo"
+                src=""
+                alt="Customer Photo">
+
+        </div>
+
+        <div class="live-camera-box">
+
+            <h3>Live Camera</h3>
+
+            <div class="face-frame">
+
+                <video
+                    id="faceVideo"
+                    autoplay
+                    playsinline
+                    class="camera">
+                </video>
+
+                <div class="face-guide"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <canvas
+        id="faceCanvas"
+        style="display:none;">
+    </canvas>
+
+    <div id="faceResult" class="face-result">
+    </div>
+
+    <button
+        class="primary-btn"
+        onclick="verifyFace()">
+
+        Verify Face
+
+    </button>
+
+    <button
+        id="continueBtn"
+        class="primary-btn continue-btn"
+        style="display:none"
+        onclick="nextPage(5)">
+
+        Continue
+
+    </button>
+
+</section>
+        <!-- PAGE 5 -->
+
+        <section id="page5" class="page">
+
+            <h2>Personal Details</h2>
+
+            <div id="personalDetails"
+                 class="details-card">
+            </div>
+
+            <div class="action-buttons">
+
+                <button
+                    class="agree-btn"
+                    onclick="acceptPersonal()">
+                    AGREE
+                </button>
+
+                <button
+                    class="reject-btn"
+                    onclick="rejectApplication('Personal Rejected')">
+                    DISAGREE
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PAGE 6 -->
+
+        <section id="page6" class="page">
+
+            <h2>Policy Details</h2>
+
+            <div id="policyDetails"
+                 class="details-card">
+            </div>
+
+            <div class="action-buttons">
+
+                <button
+                    class="agree-btn"
+                    onclick="acceptPolicy()">
+                    AGREE
+                </button>
+
+                <button
+                    class="reject-btn"
+                    onclick="rejectApplication('Policy Rejected')">
+                    DISAGREE
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PAGE 7 -->
+
+        <section id="page7" class="page">
+
+            <h2>Declaration</h2>
+
+            <div class="declaration-box">
+
+                I confirm that:
+
+                <br><br>
+
+                • The information shown to me is correct.
+
+                <br>
+
+                • The insurance policy details have been explained.
+
+                <br>
+
+                • I voluntarily agree to proceed.
+
+                <br>
+
+                • I understand the benefits, risks and conditions.
+
+            </div>
+
+            <div class="action-buttons">
+
+                <button
+                    class="agree-btn"
+                    onclick="acceptDeclaration()">
+                    AGREE
+                </button>
+
+                <button
+                    class="reject-btn"
+                    onclick="rejectApplication('Declaration Rejected')">
+                    DISAGREE
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PAGE 8 -->
+
+        <section id="page8" class="page">
+
+            <h2>Video Consent Recording</h2>
+
+            <p class="subtitle">
+                A 10-second video consent will be recorded.
+            </p>
+
+          <div class="record-video-wrapper">
+
+    <video
+        id="recordVideo"
+        autoplay
+        muted
+        playsinline
+        class="camera">
+    </video>
+
+</div>
+
+            <div id="recordingStatus">
+                Ready to record
+            </div>
+
+            <button
+                class="primary-btn"
+                onclick="startRecording()">
+                Start Recording
+            </button>
+
+        </section>
+
+        <!-- PAGE 9 -->
+
+        <section id="page9" class="page">
+
+            <div class="success-container">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2>Consent Completed</h2>
+
+                <p>
+                    Thank you. Your insurance consent has been successfully recorded.
+                </p>
+
+                <div id="finalApplicationNumber"></div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+<script type="module" src="consent.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,321 @@
+html,
+body{
+    width:100%;
+    overflow-x:hidden;
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:#0f172a;
+    position:relative;
+    overflow-x:hidden;
+    padding:30px 15px;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#2563eb 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#7c3aed 0%,transparent 35%),
+    linear-gradient(135deg,#0f172a,#111827);
+    z-index:-1;
+}
+
+.container{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:10px;
+}
+
+.header{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+}
+
+.header h1{
+    font-size:2.4rem;
+    margin-bottom:10px;
+    font-weight:700;
+}
+
+.header p{
+    opacity:.85;
+}
+
+.card{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:24px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 8px 30px rgba(0,0,0,.25);
+}
+
+.section-title{
+    color:white;
+    font-size:1.3rem;
+    font-weight:600;
+    margin-bottom:20px;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:20px;
+}
+.field{
+    display:flex;
+    flex-direction:column;
+}
+
+.field label{
+    color:white;
+    margin-bottom:8px;
+    font-size:.92rem;
+    font-weight:500;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:12px;
+    background:rgba(255,255,255,.95);
+    font-size:14px;
+}
+
+textarea{
+    resize:vertical;
+}
+
+.full-width{
+    margin-top:20px;
+}
+
+.photo-section{
+    margin-top:25px;
+    color:white;
+}
+
+.photo-section label{
+    display:block;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+#photo{
+    background:white;
+    padding:12px;
+    border-radius:12px;
+}
+
+.preview{
+    display:none;
+    margin-top:20px;
+    width:180px;
+    height:180px;
+    object-fit:cover;
+    border-radius:18px;
+    border:4px solid white;
+    box-shadow:0 6px 20px rgba(0,0,0,.25);
+}
+
+.submit-btn{
+    width:100%;
+    border:none;
+    border-radius:16px;
+    padding:18px;
+    font-size:18px;
+    font-weight:600;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #7c3aed
+    );
+    transition:.3s;
+}
+
+.submit-btn:hover{
+    transform:translateY(-2px);
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-content{
+    width:100%;
+    max-width:700px;
+    background:white;
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+}
+
+.modal-content h2{
+    color:#16a34a;
+    margin-bottom:20px;
+}
+
+.result-box{
+    background:#f8fafc;
+    border-radius:18px;
+    padding:20px;
+}
+
+#appNumber{
+    color:#2563eb;
+    margin:12px 0 20px;
+    font-size:28px;
+}
+
+#generatedLink{
+    width:100%;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.btn-group{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn-group button{
+    flex:1;
+    min-width:180px;
+    border:none;
+    padding:14px;
+    border-radius:12px;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+}
+
+#copyBtn{
+    background:#2563eb;
+}
+
+#openBtn{
+    background:#16a34a;
+}
+
+.loading{
+    opacity:.7;
+    pointer-events:none;
+}
+
+@media(max-width:768px){
+
+    .header h1{
+        font-size:1.8rem;
+    }
+
+    .card{
+        padding:18px;
+    }
+
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .btn-group{
+        flex-direction:column;
+    }
+
+    .btn-group button{
+        width:100%;
+    }
+
+}
+
+@media (max-width: 768px){
+
+    body{
+        padding:10px;
+    }
+
+    .container{
+        padding:0;
+    }
+
+    .card{
+        padding:16px;
+        border-radius:18px;
+    }
+
+    .header h1{
+        font-size:1.5rem;
+    }
+
+    .header p{
+        font-size:13px;
+    }
+
+    input,
+    select,
+    textarea{
+        font-size:16px;
+    }
+
+    .submit-btn{
+        font-size:16px;
+        padding:15px;
+    }
+
+    .preview{
+        width:140px;
+        height:140px;
+    }
+
+    .modal-content{
+        padding:20px;
+    }
+
+    #generatedLink{
+        font-size:12px;
+    }
+
+}
+
+@media (min-width:769px) and (max-width:1024px){
+
+    .container{
+        max-width:95%;
+    }
+
+    .card{
+        padding:22px;
+    }
+
+}
+button{
+    min-height:50px;
+}
