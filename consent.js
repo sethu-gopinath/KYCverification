@@ -828,7 +828,7 @@ canvas.toDataURL(
 
         const response =
         await fetch(
-            "http://127.0.0.1:8000/compare-face",
+            ""https://sethugopinath-face-api.hf.space/compare-face"",
             {
                 method:"POST",
                 body:formData
