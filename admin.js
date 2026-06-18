@@ -92,7 +92,10 @@ async function submitApplication(e) {
         generateApplicationId();
 
        const consentLink =
-`${window.location.origin}${window.location.pathname.replace("index.html","consent.html")}?id=${applicationId}`;
+new URL(
+    `consent.html?id=${applicationId}`,
+    window.location.href
+).href;
         let photoBase64 = "";
 
         const file =
