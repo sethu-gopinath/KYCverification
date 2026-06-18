@@ -92,7 +92,7 @@ async function submitApplication(e) {
         generateApplicationId();
 
         const consentLink =
-`${window.location.origin}${window.location.pathname.replace("admin.html","consent.html")}?id=${applicationId}`;
+`${window.location.origin}/KYC/consent.html?id=${applicationId}`;
         let photoBase64 = "";
 
         const file =
